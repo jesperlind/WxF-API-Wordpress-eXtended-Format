@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WxfLib", "WpRssParser\WxfLib.csproj", "{23B7F33E-8877-480C-A6FC-611D9D7CAA8F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WxfReaderTest", "WpRssReaderTest\WxfReaderTest.csproj", "{F231CC40-1484-4E3F-B4AD-7E1150F19C7F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WxfTestApp", "WxfTestApp\WxfTestApp.csproj", "{B71AB133-E864-48FF-A3F2-F08335C6B743}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{23B7F33E-8877-480C-A6FC-611D9D7CAA8F}.Debug|x86.ActiveCfg = Debug|x86
+		{23B7F33E-8877-480C-A6FC-611D9D7CAA8F}.Debug|x86.Build.0 = Debug|x86
+		{23B7F33E-8877-480C-A6FC-611D9D7CAA8F}.Release|x86.ActiveCfg = Release|x86
+		{23B7F33E-8877-480C-A6FC-611D9D7CAA8F}.Release|x86.Build.0 = Release|x86
+		{F231CC40-1484-4E3F-B4AD-7E1150F19C7F}.Debug|x86.ActiveCfg = Debug|x86
+		{F231CC40-1484-4E3F-B4AD-7E1150F19C7F}.Debug|x86.Build.0 = Debug|x86
+		{F231CC40-1484-4E3F-B4AD-7E1150F19C7F}.Release|x86.ActiveCfg = Release|x86
+		{F231CC40-1484-4E3F-B4AD-7E1150F19C7F}.Release|x86.Build.0 = Release|x86
+		{B71AB133-E864-48FF-A3F2-F08335C6B743}.Debug|x86.ActiveCfg = Debug|x86
+		{B71AB133-E864-48FF-A3F2-F08335C6B743}.Debug|x86.Build.0 = Debug|x86
+		{B71AB133-E864-48FF-A3F2-F08335C6B743}.Release|x86.ActiveCfg = Release|x86
+		{B71AB133-E864-48FF-A3F2-F08335C6B743}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(SubversionScc) = preSolution
+		Svn-Managed = True
+		Manager = AnkhSVN - Subversion Support for Visual Studio
+	EndGlobalSection
+EndGlobal

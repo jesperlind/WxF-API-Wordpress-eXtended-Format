@@ -1,0 +1,180 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Wxf.RssChannel" Collapsed="true">
+    <Position X="6.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABABCAAwKEIEAAAAAABCAAAAEAACAAAAwAAAACA=</HashCode>
+      <FileName>RssChannel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Wxf.RssFeed" Collapsed="true">
+    <Position X="0.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IEAAAAAAAAAAAAAEAAAAAAAAICEAAAAAAAAQAAAAEAA=</HashCode>
+      <FileName>RssFeed.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Wxf.RssItem" Collapsed="true">
+    <Position X="3.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgIEIEAAAAAAACAAAABAAABCAAQAAAAAA=</HashCode>
+      <FileName>RssItem.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Wxf.RssItemCollection" Collapsed="true">
+    <Position X="12.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAABAAAAAABAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>RssItemCollection.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Wxf.RssNodeCollection&lt;T&gt;" Collapsed="true">
+    <Position X="7.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACIAAABAAAAAABAACAAABASAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>RssNodeCollection.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Wxf.WxfChannelCollection" Collapsed="true">
+    <Position X="3.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAABAAAAAABAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>RssNodeCollection.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Wxf.WxfItemCollection" Collapsed="true">
+    <Position X="7.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAABAAAAAABAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>RssNodeCollection.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Wxf.WxfCommentCollection" Collapsed="true">
+    <Position X="10" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAABAAAAAABAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>RssNodeCollection.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Wxf.WxfCategoryCollection" Collapsed="true">
+    <Position X="14.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAABAAAAAABAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>RssNodeCollection.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Wxf.WxfItemCategoryCollection" Collapsed="true">
+    <Position X="1" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAABAAAAAABAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>RssNodeCollection.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Wxf.WxfTagCollection" Collapsed="true">
+    <Position X="5.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAABAAAAAABAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>RssNodeCollection.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Wxf.RssReader" Collapsed="true">
+    <Position X="0.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>RssReader.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Wxf.WxfCategory" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="17" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAABAACIAIEAAAAAAQAAAAAAAAAAEAAAEQAAAA=</HashCode>
+      <FileName>WxfCategory.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Wxf.WxfChannel" Collapsed="true">
+    <Position X="6.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAACAQAAQBAAAAAAAAAEFAAAAAAAEAAAAA=</HashCode>
+      <FileName>WxfChannel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Wxf.WxfComment" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="18.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAICAiAAoAIAgAAAQAgAIAAAAAABCQAAAAAAAAA=</HashCode>
+      <FileName>WxfComment.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Wxf.WxfFeed" Collapsed="true">
+    <Position X="0.5" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAQAAAAAAAEAAAAAAAAAAAFAA=</HashCode>
+      <FileName>WxfFeed.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Wxf.WxfImage" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="20.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAACIEIEAAAAAAAAAAAAABAACAAAQAAAAAA=</HashCode>
+      <FileName>WxfImage.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Wxf.WxfItem" Collapsed="true">
+    <Position X="3.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAhAECBEAAAAAAACAgBAAEAAAFAAIAAAAIAE=</HashCode>
+      <FileName>WxfItem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Wxf.WxfItemCategory" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="17" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAABAACIAIEAAAAAAAAAgAAAAAAAAAgAEAAAAA=</HashCode>
+      <FileName>WxfItemCategory.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Wxf.WxfNamespaces" Collapsed="true">
+    <Position X="18.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACEAIAAIAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAA=</HashCode>
+      <FileName>WxfNamespaces.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Wxf.WxfParseException" Collapsed="true">
+    <Position X="20.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>WxfParseException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Wxf.WxfReader" Collapsed="true">
+    <Position X="0.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>WxfReader.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Wxf.WxfTag" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="17" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAABAACIAIEAAAAAAQAAAAAAAAAAAAAAAQAAAA=</HashCode>
+      <FileName>WxfTag.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Interface Name="Wxf.IRssNode" Collapsed="true">
+    <Position X="17" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAIAIAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IRssNode.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
