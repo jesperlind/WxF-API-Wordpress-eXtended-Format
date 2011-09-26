@@ -10,42 +10,15 @@ namespace WpRssReaderTest
     {
         static void Main(string[] args)
         {
-            RssFeed feed = new RssFeed()
-            {
-                Version = "2.0"
-            };
+            //DownloadFeed();
 
-            var channel = new RssChannel() 
-            { 
-                Title = "Rss Test Feed",
-                Generator = "WxFLib",
-                WebMaster = "Robertuzzu",
-                Description = "Created by Robert Sundström",
-                Link = new Uri("http://robertsundstrom.wordpress.com"),
-                Language = "en",
-                PublishingDate = DateTime.Now,
-                LastBuildDate = DateTime.Now,
-                ManagingEditor = "C#"
-            };
-            feed.Channels.Add(channel);
+            ModifyWpExportedFile();
+        }
 
-            for (int i = 0; i < 10; i++)
-            {
-                var item = new RssItem()
-                {
-                    Title = string.Format("Item {0}", i),
-                    Description = "",
-                    Link = new Uri(string.Format("http://robertuzzu/posts/{0}/", i)),
-                    PublishingDate = DateTime.Now
-                };
-                channel.Items.Add(item);
-            }
-
-            feed.SaveXml("rss.xml");
-
-
-            string rssPath = AppDomain.CurrentDomain.BaseDirectory + "../../example.xml";
-            string rssPathOut = AppDomain.CurrentDomain.BaseDirectory + "../../example-with-creator.xml";
+        private static void ModifyWpExportedFile()
+        {
+            string rssPath = AppDomain.CurrentDomain.BaseDirectory + "../../example.wp.3.2.1.xml";
+            string rssPathOut = AppDomain.CurrentDomain.BaseDirectory + "../../example.wp.3.2.1.export.xml";
 
             Console.WriteLine("Path: " + rssPath);
             //Test case Creator
@@ -54,13 +27,14 @@ namespace WpRssReaderTest
             WxfChannel channel2 = blog.Channels[0];
 
             WxfItem item2 = new WxfItem()
-            {
-                Title = "Test",
-                Content = "The body",
-                PublishingDate = DateTime.Now,
-                PostDate = DateTime.Now,
-                Creator = "Creator name",//Throws exception
-            };
+                                {
+                                    Title = "Test",
+                                    Content = "The body",
+                                    PublishingDate = DateTime.Now,
+                                    PostDate = DateTime.Now,
+                                    Creator = "Creator name",
+                                    //Throws exception
+                                };
 
             channel2.Items.Add(item2);
 
@@ -107,6 +81,42 @@ namespace WpRssReaderTest
             ////}
 
             ////blog.SaveXml("example.xml");
+        }
+
+        private static void DownloadFeed()
+        {
+            RssFeed feed = new RssFeed()
+                               {
+                                   Version = "2.0"
+                               };
+
+            var channel = new RssChannel()
+                              {
+                                  Title = "Rss Test Feed",
+                                  Generator = "WxFLib",
+                                  WebMaster = "Robertuzzu",
+                                  Description = "Created by Robert Sundström",
+                                  Link = new Uri("http://robertsundstrom.wordpress.com"),
+                                  Language = "en",
+                                  PublishingDate = DateTime.Now,
+                                  LastBuildDate = DateTime.Now,
+                                  ManagingEditor = "C#"
+                              };
+            feed.Channels.Add(channel);
+
+            for (int i = 0; i < 10; i++)
+            {
+                var item = new RssItem()
+                               {
+                                   Title = string.Format("Item {0}", i),
+                                   Description = "",
+                                   Link = new Uri(string.Format("http://robertuzzu/posts/{0}/", i)),
+                                   PublishingDate = DateTime.Now
+                               };
+                channel.Items.Add(item);
+            }
+
+            feed.SaveXml("rss.xml");
         }
     }
 }
