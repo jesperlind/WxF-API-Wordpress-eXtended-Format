@@ -1,0 +1,84 @@
+Provides an API for editing files in Wordpress eXtended Format (WxF) which is based on RSS 2.0. It can of course also create and edit regular RSS 2.0 feeds.
+
+using Wxf;
+
+namespace ConsoleApplication1
+{
+     public class Program
+     {
+           WxfFeed feed = WxfReader.Parse("backup.xml");
+           
+           //Gets the RSS channel
+           WxfChannel channel = feed.Channels[0];
+           
+           //Writes the title of the posts
+           foreach(var i in channel.Items)
+           {
+                Console.WriteLine(i.Title);
+           }
+     }
+}
+
+You can use LINQ to easily query your data.
+
+
+var result = from i in channel.Items
+                  where i.Comments.Count > 0
+                  select i;
+
+
+Parse RSS 2.0 feeds
+
+
+RssFeed feed = RssReader.Parse("feed.rss");
+
+foreach(var i in feed.Channel[0].Items)
+{
+     Console.WriteLine(i.Title);
+     Console.WriteLine(i.Description);
+}
+
+
+A WpRssFeed with cast to its base class, RssFeed.
+
+
+var rss = feed.AsRssFeed();
+
+
+Generating an RSS feed:
+
+
+            RssFeed feed = new RssFeed()
+            {
+                Version = "2.0"
+            };
+
+            var channel = new RssChannel() 
+            { 
+                Title = "Rss Test Feed",
+                Generator = "WxFLib",
+                WebMaster = "Robertuzzu",
+                Description = "Created by Robert Sundström",
+                Link = new Uri("http://robertsundstrom.wordpress.com"),
+                Language = "en",
+                PublishingDate = DateTime.Now,
+                LastBuildDate = DateTime.Now,
+                ManagingEditor = "C#"
+            };
+            feed.Channels.Add(channel);
+
+            for (int i = 0; i < 10; i++)
+            {
+                var item = new RssItem()
+                {
+                    Title = string.Format("Item {0}", i),
+                    Description = "",
+                    Link = new Uri("http://web/hello/"),
+                    PublishingDate = DateTime.Now
+                };
+                channel.Items.Add(item);
+            }
+
+            feed.SaveXml("rss.xml");
+
+Last edited Jun 25 2009 at 8:50 PM by Robertuzzu, version 12
