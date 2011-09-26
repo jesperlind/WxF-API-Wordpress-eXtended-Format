@@ -1,15 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Xml.Linq;
+﻿using System.Xml.Linq;
 
-namespace Wxf
+namespace WxfLib
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public interface IRssNode
     {
+        /// <summary>
+        /// 
+        /// </summary>
         XElement XElement { get; }
 
+        /// <summary>
+        /// 
+        /// </summary>
         void Detach();
 
         //XElement GenerateXElement();

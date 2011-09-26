@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Xml.Linq;
-using System.Diagnostics;
+﻿using System.Xml.Linq;
 
-namespace Wxf
+namespace WxfLib
 {
     public class WxfTag : IRssNode
     {
-        private XElement _element;
+        private readonly XElement _element;
 
         internal WxfTag(XElement element)
         {
@@ -23,7 +18,7 @@ namespace Wxf
 
         public WxfTag(string name)
         {
-            _element = new XElement(WxfNamespaces.wp + "tag");
+            _element = new XElement(WxfNamespaces.Wp + "tag");
 
             this.Name = name;
         }
@@ -35,14 +30,14 @@ namespace Wxf
 
         public string Name
         {
-            get { return this.XElement.Element(WxfNamespaces.wp + "tag_name").Value; }
-            set { this.XElement.Element(WxfNamespaces.wp + "tag_name").Value = value; }
+            get { return this.XElement.Element(WxfNamespaces.Wp + "tag_name").Value; }
+            set { this.XElement.Element(WxfNamespaces.Wp + "tag_name").Value = value; }
         }
 
         public string Slug
         {
-            get { return this.XElement.Element(WxfNamespaces.wp + "tag_slug").Value; }
-            set { this.XElement.Element(WxfNamespaces.wp + "tag_slug").Value = value; }
+            get { return this.XElement.Element(WxfNamespaces.Wp + "tag_slug").Value; }
+            set { this.XElement.Element(WxfNamespaces.Wp + "tag_slug").Value = value; }
         }
 
         public void Detach()

@@ -1,10 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Xml.Linq;
+using Wxf;
 
-namespace Wxf
+namespace WxfLib
 {
     /// <summary>
     /// RssItem

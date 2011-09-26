@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Xml.Linq;
-using System.Diagnostics;
+﻿using System.Xml.Linq;
+using Wxf;
 
-namespace Wxf
+namespace WxfLib
 {
    /// <summary>
     /// Represents a WxfChannel.
@@ -35,24 +31,24 @@ namespace Wxf
         
         public string WxrVersion
         {
-            get { return this.XElement.Element(WxfNamespaces.wp + "wxr_version").Value; }
-            set { this.XElement.Element(WxfNamespaces.wp + "wxr_version").Value = value; }
+            get { return this.XElement.Element(WxfNamespaces.Wp + "wxr_version").Value; }
+            set { this.XElement.Element(WxfNamespaces.Wp + "wxr_version").Value = value; }
         }
 
         public string BaseSiteUrl
         {
             get
             {
-                return this.XElement.Element(WxfNamespaces.wp + "base_site_url").Value;
+                return this.XElement.Element(WxfNamespaces.Wp + "base_site_url").Value;
             }
 
-            set { this.XElement.Element(WxfNamespaces.wp + "base_site_url").Value = value; }
+            set { this.XElement.Element(WxfNamespaces.Wp + "base_site_url").Value = value; }
         }
 
         public string BaseBlogUrl
         {
-            get { return this.XElement.Element(WxfNamespaces.wp + "base_blog_url").Value; }
-            set { this.XElement.Element(WxfNamespaces.wp + "base_blog_url").Value = value; }
+            get { return this.XElement.Element(WxfNamespaces.Wp + "base_blog_url").Value; }
+            set { this.XElement.Element(WxfNamespaces.Wp + "base_blog_url").Value = value; }
         }
 
         public WxfTagCollection Tags

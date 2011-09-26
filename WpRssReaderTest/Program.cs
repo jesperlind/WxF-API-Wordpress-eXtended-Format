@@ -3,65 +3,63 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Wxf;
+using WxfLib;
 
 namespace WpRssReaderTest
 {
     class Program
     {
+        static private readonly string RssPath = AppDomain.CurrentDomain.BaseDirectory + "../../example.wp.3.2.1.xml";
+        static private readonly string RssPathOut = AppDomain.CurrentDomain.BaseDirectory + "../../example.wp.3.2.1.export.xml";
+
         static void Main(string[] args)
         {
+            Console.WriteLine("Path: " + RssPath);
+
+            var blog = WxfReader.Parse(RssPath);
+
             //DownloadFeed();
 
-            ModifyWpExportedFile();
-        }
+            //AddCreatorTest(RssPathOut, RssPath);
 
-        private static void ModifyWpExportedFile()
-        {
-            string rssPath = AppDomain.CurrentDomain.BaseDirectory + "../../example.wp.3.2.1.xml";
-            string rssPathOut = AppDomain.CurrentDomain.BaseDirectory + "../../example.wp.3.2.1.export.xml";
-
-            Console.WriteLine("Path: " + rssPath);
-            //Test case Creator
-            var blog = WxfReader.Parse(rssPath);
-
-            WxfChannel channel2 = blog.Channels[0];
-
-            WxfItem item2 = new WxfItem()
-                                {
-                                    Title = "Test",
-                                    Content = "The body",
-                                    PublishingDate = DateTime.Now,
-                                    PostDate = DateTime.Now,
-                                    Creator = "Creator name",
-                                    //Throws exception
-                                };
-
-            channel2.Items.Add(item2);
-
-            blog.SaveXml(rssPathOut);
-
-            //var blog = WxfReader.Parse("example.xml");
-
-            //WxfChannel channel = blog.Channels[0];
-            //var c = channel.Image.Image;
-
-            //foreach (var i in channel.Items)
-            //{
-            //    Console.WriteLine("Title: {0} \nPublishing Date: {1} \nCreator: {2} \nLink: {3}\n", i.Title, i.PublishingDate, i.Creator, i.Link);
-            //}
-
-            //WxfItem item = new WxfItem()
-            //{
-            //    Title = "Wordpress Test",
-            //    Content = "Hello, World!"
-            //};
-            //channel.Items.Add(item);
+            AddPostsTest(blog);
+            blog.SaveXml(RssPathOut);
 
             //var rss = blog.ToRssFeed();
+        }
 
-            ////var result = from i in channel.Items
-            ////             where !i.Title.Contains("Finding Prime")
-            ////             select i;
+        private static void AddPostsTest(WxfFeed blog)
+        {
+
+            WxfChannel channel = blog.Channels[0];
+
+            try 
+            {
+                var image = channel.Image.Image;
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine("Image problem: " + e.Message);
+            }
+
+
+            foreach (var i in channel.Items)
+            {
+                Console.WriteLine("Title: {0} \nPublishing Date: {1} \nCreator: {2} \nLink: {3}\n", i.Title, i.PublishingDate, i.Creator, i.Link);
+            }
+
+            var item = new WxfItem
+            {
+                Title = "Wordpress Test for namespaces2",
+                Content = "Hello, World!",
+                PostType = "post",
+                Status = "publish"
+            };
+            channel.Items.Add(item);
+
+            //var result = from i in channel.Items
+            //             where !i.Title.Contains("Finding Prime")
+            //             select i;
 
             //foreach (var i in result)
             //{
@@ -73,14 +71,36 @@ namespace WpRssReaderTest
             //    }
             //}
 
-            ////foreach (var i in result.ToList())
-            ////{
-            ////    i.Detach();
-            ////    //Console.WriteLine("Title: {0} \nPublishing Date: {1} \nCreator: {2} \nLink: {3} \nComments: {4}\n", i.Title, i.PublishingDate, i.Creator, i.Link, i.Comments.Count);
-            ////    Console.WriteLine("Items {0}", channel.Items.Count);
-            ////}
+            //foreach (var i in result.ToList())
+            //{
+            //    i.Detach();
+            //    //Console.WriteLine("Title: {0} \nPublishing Date: {1} \nCreator: {2} \nLink: {3} \nComments: {4}\n", i.Title, i.PublishingDate, i.Creator, i.Link, i.Comments.Count);
+            //    Console.WriteLine("Items {0}", channel.Items.Count);
+            //}
 
-            ////blog.SaveXml("example.xml");
+            //blog.SaveXml("example.xml");
+        }
+
+        private static void AddCreatorTest(string rssPathOut, string rssPath)
+        {
+//Test case Creator
+            var blog = WxfReader.Parse(rssPath);
+
+            WxfChannel channel2 = blog.Channels[0];
+
+            var item2 = new WxfItem
+                            {
+                                Title = "Test",
+                                Content = "The body",
+                                PublishingDate = DateTime.Now,
+                                PostDate = DateTime.Now,
+                                Creator = "Creator name",
+                                //Throws exception
+                            };
+
+            channel2.Items.Add(item2);
+
+            blog.SaveXml(rssPathOut);
         }
 
         private static void DownloadFeed()

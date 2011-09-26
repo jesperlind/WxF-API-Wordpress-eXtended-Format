@@ -1,10 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Xml.Linq;
+using Wxf;
 
-namespace Wxf
+namespace WxfLib
 {
     /// <summary>
     /// RssChannel
@@ -27,10 +25,10 @@ namespace Wxf
             XElement = new XElement("channel");
             Items = new RssItemCollection(XElement);
 
-            generateParentElements();
+            GenerateParentElements();
         }
 
-        private void generateParentElements()
+        private void GenerateParentElements()
         {
             this.XElement.Add(new XElement("title"));
             this.XElement.Add(new XElement("link"));
@@ -45,6 +43,9 @@ namespace Wxf
             this.XElement.Add(new XElement("ttl"));
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         public string Title
         {
             get 
@@ -67,6 +68,9 @@ namespace Wxf
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         public Uri Link
         {
             get { return new Uri(this.XElement.Element("link").Value); }
@@ -81,6 +85,9 @@ namespace Wxf
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         public string Description
         {
             get
@@ -100,6 +107,9 @@ namespace Wxf
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         public DateTime PublishingDate
         {
             get { return DateTime.Parse(this.XElement.Element("pubDate").Value); }

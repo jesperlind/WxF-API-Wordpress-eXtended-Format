@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Xml.Linq;
-using System.Diagnostics;
+﻿using System.Xml.Linq;
+using Wxf;
 
-namespace Wxf
+namespace WxfLib
 {
     /// <summary>
     /// Represents a WxfCategory.
@@ -16,7 +12,6 @@ namespace Wxf
 
         internal WxfCategory(XElement element)
         {
-            
 
             _element = element;
 
@@ -28,7 +23,7 @@ namespace Wxf
 
         public WxfCategory(string name)
         {
-            _element = new XElement(WxfNamespaces.wp + "category");
+            _element = new XElement(WxfNamespaces.Wp + "category");
 
             GenerateChildElements();
 
@@ -37,7 +32,7 @@ namespace Wxf
 
         public WxfCategory(string name, WxfCategory parent)
         {
-            _element = new XElement(WxfNamespaces.wp + "category");
+            _element = new XElement(WxfNamespaces.Wp + "category");
             
             GenerateChildElements();
 
@@ -47,9 +42,9 @@ namespace Wxf
 
         private void GenerateChildElements()
         {
-            this.XElement.Add(new XElement(WxfNamespaces.wp + "cat_name"));
-            this.XElement.Add(new XElement(WxfNamespaces.wp + "category_nicename"));
-            this.XElement.Add(new XElement(WxfNamespaces.wp + "category_parent"));
+            this.XElement.Add(new XElement(WxfNamespaces.Wp + "cat_name"));
+            this.XElement.Add(new XElement(WxfNamespaces.Wp + "category_nicename"));
+            this.XElement.Add(new XElement(WxfNamespaces.Wp + "category_parent"));
         }
 
         public static WxfCategory Parse(XElement element)
@@ -59,37 +54,37 @@ namespace Wxf
 
         public string Name
         {
-            get { return this.XElement.Element(WxfNamespaces.wp + "cat_name").Value; }
-            set { this.XElement.Element(WxfNamespaces.wp + "cat_name").ReplaceNodes(new XCData(value)); }
+            get { return this.XElement.Element(WxfNamespaces.Wp + "cat_name").Value; }
+            set { this.XElement.Element(WxfNamespaces.Wp + "cat_name").ReplaceNodes(new XCData(value)); }
         }
 
         public string NiceName
         {
-            get { return this.XElement.Element(WxfNamespaces.wp + "category_nicename").Value; }
-            set { this.XElement.Element(WxfNamespaces.wp + "category_nicename").Value = value; }
+            get { return this.XElement.Element(WxfNamespaces.Wp + "category_nicename").Value; }
+            set { this.XElement.Element(WxfNamespaces.Wp + "category_nicename").Value = value; }
         }
 
         public void SetParent(WxfCategory category)
         {
-            this.XElement.Element(WxfNamespaces.wp + "category_parent").Value = category.Name;
+            this.XElement.Element(WxfNamespaces.Wp + "category_parent").Value = category.Name;
         }
 
         public void SetParent(string name)
         {
-            this.XElement.Element(WxfNamespaces.wp + "category_parent").Value = name;
+            this.XElement.Element(WxfNamespaces.Wp + "category_parent").Value = name;
         }
 
         public string GetParent()
         {
-            return this.XElement.Element(WxfNamespaces.wp + "category_parent").Value;
+            return this.XElement.Element(WxfNamespaces.Wp + "category_parent").Value;
         }
 
         public void Detach()
         {
-            detachFromParent();
+            DetachFromParent();
         }
 
-        internal void detachFromParent()
+        internal void DetachFromParent()
         {
             XElement.Remove();
         }

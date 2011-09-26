@@ -1,18 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Xml.Linq;
-using System.Diagnostics;
+using Wxf;
 
-namespace Wxf
+namespace WxfLib
 {
     /// <summary>
     /// Represents a WxfImage.
     /// </summary>
     public class WxfImage : IRssNode
     {
-        private XElement _element;
+        private readonly XElement _element;
 
         internal WxfImage(XElement element)
         {
@@ -42,14 +39,14 @@ namespace Wxf
             set { this.XElement.Element("link").Value = value.ToString(); }
         }
 
-        private System.Net.WebClient client = new System.Net.WebClient();
+        private readonly System.Net.WebClient _client = new System.Net.WebClient();
 
         public System.Drawing.Image Image
         {
             get 
             {
-                string path = @"wxf_image.dat";
-                client.DownloadFile(this.Url, path);
+                const string path = @"wxf_image.dat";
+                _client.DownloadFile(this.Url, path);
 
                 return System.Drawing.Image.FromFile(path); 
             }
@@ -57,10 +54,10 @@ namespace Wxf
 
         public void Detach()
         {
-            detachFromParent();
+            DetachFromParent();
         }
 
-        internal void detachFromParent()
+        internal void DetachFromParent()
         {
             XElement.Remove();
         }

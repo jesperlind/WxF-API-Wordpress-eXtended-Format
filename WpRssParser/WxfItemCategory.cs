@@ -1,18 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Xml.Linq;
-using System.Diagnostics;
+﻿using System.Xml.Linq;
+using Wxf;
 
-namespace Wxf
+namespace WxfLib
 {
     /// <summary>
     /// Represents a WxfItemCategory.
     /// </summary>
     public class WxfItemCategory : IRssNode
     {
-        private XElement _element;
+        private readonly XElement _element;
 
         internal WxfItemCategory(XElement element)
         {
@@ -74,10 +70,10 @@ namespace Wxf
 
         public void Detach()
         {
-            detachFromParent();
+            DetachFromParent();
         }
 
-        internal void detachFromParent()
+        internal void DetachFromParent()
         {
             XElement.Remove();
         }

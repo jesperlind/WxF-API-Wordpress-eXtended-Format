@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Xml.Linq;
+using Wxf;
 
-namespace Wxf
+namespace WxfLib
 {
     /// <summary>
     /// A collection of RssNode objects.
@@ -16,7 +16,7 @@ namespace Wxf
         /// Base constructor.
         /// </summary>
         /// <param name="parentXElement"></param>
-        public RssNodeCollection(XElement parentXElement)
+        protected RssNodeCollection(XElement parentXElement)
         {
             ParentXElement = parentXElement;
         }
@@ -90,6 +90,11 @@ namespace Wxf
     /// </summary>
     public class WxfChannelCollection : RssNodeCollection<WxfChannel>
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="parentXElement"></param>
+        /// <exception cref="Exception"></exception>
         public WxfChannelCollection(XElement parentXElement) : base(parentXElement)
         {
             if (parentXElement.Name != "rss")
@@ -125,6 +130,11 @@ namespace Wxf
     /// </summary>
     public class WxfItemCollection : RssNodeCollection<WxfItem>
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="parentXElement"></param>
+        /// <exception cref="Exception"></exception>
         public WxfItemCollection(XElement parentXElement)
             : base(parentXElement)
         {
@@ -185,7 +195,7 @@ namespace Wxf
 
         public override IEnumerator<WxfComment> GetEnumerator()
         {
-            foreach (var item in ParentXElement.Elements(WxfNamespaces.wp + "comment"))
+            foreach (var item in ParentXElement.Elements(WxfNamespaces.Wp + "comment"))
             {
                 yield return new WxfComment(item);
             }
@@ -221,7 +231,7 @@ namespace Wxf
 
         public override IEnumerator<WxfCategory> GetEnumerator()
         {
-            foreach (var item in ParentXElement.Elements(WxfNamespaces.wp + "category"))
+            foreach (var item in ParentXElement.Elements(WxfNamespaces.Wp + "category"))
             {
                 yield return new WxfCategory(item);
             }
@@ -293,7 +303,7 @@ namespace Wxf
 
         public override IEnumerator<WxfTag> GetEnumerator()
         {
-            foreach (var item in ParentXElement.Elements(WxfNamespaces.wp + "tag"))
+            foreach (var item in ParentXElement.Elements(WxfNamespaces.Wp + "tag"))
             {
                 yield return new WxfTag(item);
             }

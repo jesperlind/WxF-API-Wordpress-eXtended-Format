@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Xml.Linq;
-using System.Diagnostics;
+﻿using System.Xml.Linq;
 
-namespace Wxf
+namespace WxfLib
 {
     /// <summary>
     /// Contains objects representing the Wxf namespaces.
@@ -15,7 +10,7 @@ namespace Wxf
         /// <summary>
         /// wfw = http://wellformedweb.org/CommentAPI/
         /// </summary>
-        public static XNamespace wfw
+        public static XNamespace Wfw
         {
             get
             {
@@ -27,7 +22,7 @@ namespace Wxf
         /// <summary>
         /// dc = http://purl.org/dc/elements/1.1/
         /// </summary>
-        public static XNamespace dc
+        public static XNamespace Dc
         {
             get
             {
@@ -39,7 +34,7 @@ namespace Wxf
         /// <summary>
         /// content = http://purl.org/rss/1.0/modules/content/
         /// </summary>
-        public static XNamespace content
+        public static XNamespace Content
         {
             get
             {
@@ -49,25 +44,36 @@ namespace Wxf
         }
 
         /// <summary>
-        /// wp = http://wordpress.org/export/1.0/
+        /// wp = http://wordpress.org/export/1.1/
         /// </summary>
-        public static XNamespace wp
+        public static XNamespace Wp
         {
             get
             {
-                XNamespace wp = "http://wordpress.org/export/1.0/";
+                XNamespace wp = "http://wordpress.org/export/1.1/";
                 return wp;
             }
         }
 
+        ///// <summary>
+        ///// wp
+        ///// </summary>
+        //public static string WpPrefix
+        //{
+        //    get
+        //    {
+        //        return "wp";
+        //    }
+        //}
+
         /// <summary>
-        /// excerpt = http://purl.org/rss/1.0/modules/excerpt/
+        /// excerpt = http://wordpress.org/export/1.1/excerpt/
         /// </summary>
-        public static XNamespace excerpt
+        public static XNamespace Excerpt
         {
             get
             {
-                XNamespace excerpt = "http://purl.org/rss/1.0/modules/excerpt/";
+                XNamespace excerpt = "http://wordpress.org/export/1.1/excerpt/";
                 return excerpt;
             }
         }

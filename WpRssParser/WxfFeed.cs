@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Xml.Linq;
-using System.Diagnostics;
+﻿using System.Xml.Linq;
+using Wxf;
 
-namespace Wxf
+namespace WxfLib
 {
     /// <summary>
     /// Represents a WxfFeed.
@@ -13,7 +9,7 @@ namespace Wxf
     public class WxfFeed : RssFeed
     {
         private XDocument _doc;
-        private XElement _element;
+        private readonly XElement _element;
 
         internal WxfFeed(XDocument document)
             : base(document)
